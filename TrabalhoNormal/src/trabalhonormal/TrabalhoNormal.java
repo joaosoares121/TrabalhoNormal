@@ -5,6 +5,10 @@
  */
 package trabalhonormal;
 
+import interfaces.controller.ITest;
+import interfaces.exceptions.TestException;
+import views.TestWindow;
+
 /**
  *
  * @author joaosoares
@@ -14,8 +18,21 @@ public class TrabalhoNormal {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // Trabalho Alterado
+    public static void main(String[] args) throws TestException {
+     
+        System.out.println("Inicio Teste!");
+        
+        ITest demoTest = new Test();
+        demoTest.loadFromJSONFile("../data/teste_A.json");
+        //demoTest.loadFromJSONFile("/Users/joaosoares/NetBeansProjects/TrabalhoNormal/TrabalhoNormal/src/data/teste_A.json");
+        
+        TestWindow t = new TestWindow();
+        t.startTest(demoTest);
+        
+        System.out.println("Teste Efetuado");
+        System.out.println(demoTest.toString());
+        
+        
     }
     
 }
