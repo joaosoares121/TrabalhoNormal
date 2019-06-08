@@ -25,7 +25,7 @@ public class Test implements ITest{
     private boolean loadjson;
     private ITestStatistics statistics;
     private String path;
-    
+    private Object objects[];
     
     
     
@@ -34,12 +34,30 @@ public class Test implements ITest{
 
     @Override
     public boolean addQuestion(IQuestion iq) throws TestException {
-       return question;
+       //return question;
+    
+        int tam = 100;
+
+        if (tam == this.objects.length){
+            return false;
+
+        }else{
+
+            this.objects[tam] = new Object();
+            return true;
+        }
+    
+    
+    
+    
     }
+    
+    
+    
 
     @Override
     public IQuestion getQuestion(int i) throws TestException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return questionclasse;
     }
 
     @Override
@@ -54,17 +72,17 @@ public class Test implements ITest{
 
     @Override
     public int numberQuestions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 3;
     }
 
     @Override
     public boolean isComplete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
     public ITestStatistics getTestStatistics() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return statistics;
     }
 
     @Override
