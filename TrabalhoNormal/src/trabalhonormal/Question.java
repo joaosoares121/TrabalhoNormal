@@ -23,6 +23,8 @@ public class Question implements interfaces.models.IQuestion{
 
     
     
+    
+    //Titulo da Pergunta
     @Override
     public String getTitle() {
        return title;
@@ -80,6 +82,11 @@ public class Question implements interfaces.models.IQuestion{
             System.out.println("CORRETA");
         }
         return correct_answer;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" + "title=" + title + ", question_descripton=" + question_descripton + ", question_metadata=" + question_metadata + ", done=" + done + ", user_answer=" + user_answer + ", correct_answer=" + correct_answer + '}';
     }
     
    

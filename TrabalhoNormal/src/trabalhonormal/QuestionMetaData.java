@@ -12,33 +12,24 @@ package trabalhonormal;
 public class QuestionMetaData implements interfaces.models.IQuestionMetadata{
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @Override
     public long getTimestamp_start() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getTimestamp_start();
     }
 
     @Override
     public void setTimestamp_start(long l) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setTimestamp_start(l);
     }
 
     @Override
     public long getTimestamp_finish() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getTimestamp_finish();
     }
 
     @Override
     public void setTimestamp_finish(long l) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       this.setTimestamp_finish(l);
     }
     
 }

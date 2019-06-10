@@ -13,56 +13,44 @@ import interfaces.models.IQuestion;
  */
 public class TestStatistics implements interfaces.controller.ITestStatistics{
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @Override
     public double meanTimePerAnswer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return meanTimePerAnswer();
     }
 
     @Override
     public double standardDeviationTimePerAnsewer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return standardDeviationTimePerAnsewer();
     }
 
     @Override
     public double correctAnswerPecentage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return correctAnswerPecentage();
     }
 
     @Override
     public double incorrectAnswerPecentage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return incorrectAnswerPecentage();
     }
 
     @Override
     public int correctAnswer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return correctAnswer();
     }
 
     @Override
     public int incorrectAnswer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return incorrectAnswer();
     }
 
     @Override
     public IQuestion[] incorrectAnswers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return incorrectAnswers();
     }
 
     @Override
     public IQuestion[] correctAnswers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return correctAnswers();
     }
     
 }

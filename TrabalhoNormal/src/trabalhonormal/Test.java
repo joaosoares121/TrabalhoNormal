@@ -52,22 +52,21 @@ public class Test implements ITest{
     
     }
     
-    
-    
 
     @Override
     public IQuestion getQuestion(int i) throws TestException {
+        
         return questionclasse;
     }
 
     @Override
     public boolean removeQuestion(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return removeQuestion(questionclasse);
     }
 
     @Override
     public boolean removeQuestion(IQuestion iq) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return removeQuestion(iq);
     }
 
     @Override

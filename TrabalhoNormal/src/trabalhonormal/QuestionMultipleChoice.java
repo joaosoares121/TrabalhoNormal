@@ -14,97 +14,94 @@ import interfaces.models.IQuestionMetadata;
  */
 public class QuestionMultipleChoice implements interfaces.models.IQuestionMultipleChoice{
 
-    
-    private String[] options;
-    private String[] setoptions;
-
+   
     public String[] getSetoptions() {
-        return setoptions;
+        return getSetoptions();
     }
 
     public void setSetoptions(String[] setoptions) {
-        this.setoptions = setoptions;
+        this.setSetoptions(setoptions);
     }
     
     
     @Override
     public String[] getOptions() {
-       return options;
+       return getOptions();
     }
 
     @Override
     public void setOptions(String[] strings) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setOptions(strings);
     }
 
     @Override
     public String getCorrect_answer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getCorrect_answer();
     }
 
     @Override
     public void setCorrect_answer(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setCorrect_answer(string);
     }
 
     @Override
     public String getUser_answer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getUser_answer();
     }
 
     @Override
     public void setUser_answer(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setUser_answer(string);
     }
 
     @Override
-    public String getTitle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       public String getTitle() {
+           return  getTitle();
     }
 
     @Override
     public void setTitle(String string) throws QuestionException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setTitle(string);
     }
 
     @Override
     public String getQuestion_description() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getQuestion_description();
     }
 
     @Override
     public void setQuestion_description(String string) throws QuestionException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setQuestion_description(string);
     }
 
     @Override
     public IQuestionMetadata getQuestion_metadata() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getQuestion_metadata();
     }
 
     @Override
     public void setQuestion_metadata(IQuestionMetadata iqm) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setQuestion_metadata(iqm);
     }
 
     @Override
     public boolean isDone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    return isDone();
     }
 
     @Override
     public void setDone(boolean bln) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setDone(bln);
     }
 
     @Override
     public void answer(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.answer(string);
     }
 
     @Override
     public boolean evaluateAnswer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return evaluateAnswer();
     }
     
 }
