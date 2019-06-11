@@ -112,9 +112,10 @@ private int i;
         String title = jsonObject.get("title").getAsString();
         String question_description = jsonObject.get("question_description").getAsString();
         
-        System.out.println("title = " + type);
-        System.out.println("question = " + question);
-        System.out.println("question_description" + question_description);
+        System.out.println("type = " + type);
+        System.out.println("title = " + title);
+        //System.out.println("question = " + question);
+        System.out.println("question_description: " + question_description);
 
         JsonArray optionsArray = jsonObject.getAsJsonArray("options");
         for (JsonElement option : optionsArray) {
