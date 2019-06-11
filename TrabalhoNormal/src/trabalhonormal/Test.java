@@ -98,7 +98,7 @@ private int i;
         //https://java2blog.com/gson-example-read-and-write-json/
         
         Gson gson = new Gson();
-        File jsonFile = Paths.get("../data/teste_A.json").toFile();
+        File jsonFile = Paths.get("/Users/joaosoares/NetBeansProjects/TrabalhoNormal/TrabalhoNormal/src/data/teste_A.json").toFile();
         JsonObject jsonObject = null;
         try {
             jsonObject = gson.fromJson(new FileReader(jsonFile), JsonObject.class);
@@ -110,7 +110,7 @@ private int i;
 
         JsonObject question = jsonObject.getAsJsonObject("question");
         String title = jsonObject.get("title").getAsString();
-        String question_description = question.get("question_description").getAsString();
+        String question_description = jsonObject.get("question_description").getAsString();
         
         System.out.println("title = " + type);
         System.out.println("question = " + question);
