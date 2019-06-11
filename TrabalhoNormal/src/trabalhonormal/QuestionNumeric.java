@@ -5,84 +5,53 @@
  */
 package trabalhonormal;
 
-import interfaces.exceptions.QuestionException;
-import interfaces.models.IQuestionMetadata;
 
 /**
  *
  * @author joaosoares
  */
-public class QuestionNumeric implements interfaces.models.IQuestionNumeric{
+public class QuestionNumeric extends Question implements interfaces.models.IQuestionNumeric{
 
-        
+        private double getCorrect_answer;
+        private double getUser_answer;
+
+    public double getGetCorrect_answer() {
+        return getCorrect_answer;
+    }
+
+    public void setGetCorrect_answer(double getCorrect_answer) {
+        this.getCorrect_answer = getCorrect_answer;
+    }
+
+    public double getGetUser_answer() {
+        return getUser_answer;
+    }
+
+    public void setGetUser_answer(double getUser_answer) {
+        this.getUser_answer = getUser_answer;
+    }
+
     @Override
     public double getCorrect_anwser() {
-        return getCorrect_anwser();
+        return getCorrect_answer;
     }
 
     @Override
     public void setCorrect_anwser(double d) {
-        this.setCorrect_anwser(d);
+        this.setGetCorrect_answer(getCorrect_answer);
     }
 
     @Override
     public double getUser_answer() {
-        return getUser_answer();
+       return getUser_answer;
     }
 
     @Override
     public void setUser_answer(double d) {
-        this.setUser_answer(d);
+       this.setGetUser_answer(getUser_answer);
     }
-
-    @Override
-    public String getTitle() {
-       return getTitle();
-    }
-
-    @Override
-    public void setTitle(String string) throws QuestionException {
-        this.setTitle(string);
-    }
-
-    @Override
-    public String getQuestion_description() {
-       return getQuestion_description();
-    }
-
-    @Override
-    public void setQuestion_description(String string) throws QuestionException {
-        this.setQuestion_description(string);
-    }
-
-    @Override
-    public IQuestionMetadata getQuestion_metadata() {
-        return getQuestion_metadata();
-    }
-
-    @Override
-    public void setQuestion_metadata(IQuestionMetadata iqm) {
-        this.setQuestion_metadata(iqm);
-    }
-
-    @Override
-    public boolean isDone() {
-        return isDone();
-    }
-
-    @Override
-    public void setDone(boolean bln) {
-        this.isDone();
-    }
-
-    @Override
-    public void answer(String string) {
-        this.answer(string);
-    }
-
-    @Override
-    public boolean evaluateAnswer() {
-        return evaluateAnswer();
-    }
+        
+    
+    
     
 }

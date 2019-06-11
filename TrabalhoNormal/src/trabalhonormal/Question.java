@@ -57,7 +57,14 @@ public class Question implements interfaces.models.IQuestion{
 
     @Override
     public boolean isDone() {
-        return done;
+            
+        if(true == isDone()){
+            return true;
+        }else{
+            return false;
+        }
+        
+        
     }
 
     @Override
