@@ -5,11 +5,6 @@
  */
 package trabalhonormal;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonReader;
 import interfaces.controller.ITest;
 import interfaces.controller.ITestStatistics;
 import interfaces.exceptions.TestException;
@@ -17,10 +12,16 @@ import interfaces.models.IQuestion;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.nio.file.Paths;
+
+//import jdk.nashorn.internal.parser.JSONParser;
+import java.io.IOException;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 /**
  *
  * @author joaosoares
@@ -35,17 +36,31 @@ public class Test implements ITest {
     private boolean loadjson;
     private ITestStatistics statistics;
     private String path;
+    private String options[];
     
     //Array de Objectos do tipo Question
     private Question[] objects = new Question[5];
-private int i;
-    public Test() {
+    private int i;
+
+    public Test(String path) {
+        this.path = path;
     }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+    
+    
 
     @Override
     public boolean addQuestion(IQuestion iq) throws TestException {
         //return question;
         
+       
         
         int tam = 100;
 
@@ -93,40 +108,100 @@ private int i;
 
     @Override
     public boolean loadFromJSONFile(String string) throws TestException {
+        
+        File f = new File(this.path);
+        
+        if (f.exists()) {
+                try {
+                    
+
+                    JSONParser parser = new JSONParser();
+
+                    JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(this.path));
+
+                    for (Object o : jsonArray) {
+                   
+                        
+                        //JSONObject questionob = (JSONObject) o;
+
+                        //JSONArray questionDetails = (JSONArray) questionob.get("type");
+
+                            JSONObject questionDetails = (JSONObject) o;
+
+                            String type = (String) questionDetails.get("type");
+                            System.out.println("Type: " + type);
+                            
+                            
+                            //JSONObject questiondet = (JSONObject) o;
+                            
+                            //JSONObject questionDetails = (JSONObject) questiondet.get("question");
+
+                            
+                            
+                            JSONObject questionn = (JSONObject) questionDetails.get("question");
+                            
+                            String title = (String) questionn.get("title");
+                            
+                            System.out.println("Title: " + title);
+                            
+                            String question_description = (String) questionn.get("question_description");
+                            
+                            System.out.println("Question Description: " + question_description);
+                            
+                           // JSONArray options = (JSONArray) questionDetails.get("options");
+                            
+                           
+                            
+                            
+                            JSONArray optionsArray = (JSONArray) questionDetails.get("options");
+                            //this.options = new String[options.size()];
+                            
+                           // for (int i = 0; i<options.size();i++) {
+                            //   System.out.println("options: " + this.options[i]);
+                           // }
+                    
+                           
+                           
+                          // Iterator iarray = optionsArray.iterator();
+ 
+                            //while (iarray.hasNext()) {
+
+                              //  System.out.println(" "+iarray.next());
+
+                            //}
+                            
+                            
+                            String correct_answer = (String) questionn.get("correct_answer");
+                            
+                            System.out.println("Correct Answer: " + correct_answer);
+                            
+                            System.out.println("---------**********--------");
+                            
+                            
+                            
+                            
+                       
+                    }
+
+                     return this.question;
+
+                } catch (ParseException ex) {
+                   
+                } catch (FileNotFoundException ex) {
+                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+            }
+               
+            }
+            return false;
 
         //http://codingwithcake.com/java/how-to-parse-a-json-file-using-gson/
         //https://java2blog.com/gson-example-read-and-write-json/
         
-        Gson gson = new Gson();
-        File jsonFile = Paths.get("/Users/joaosoares/NetBeansProjects/TrabalhoNormal/TrabalhoNormal/src/data/teste_A.json").toFile();
-        JsonObject jsonObject = null;
-        try {
-            jsonObject = gson.fromJson(new FileReader(jsonFile), JsonObject.class);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        String type = jsonObject.get("type").getAsString();
-
-        JsonObject question = jsonObject.getAsJsonObject("question");
-        String title = jsonObject.get("title").getAsString();
-        String question_description = jsonObject.get("question_description").getAsString();
-        
-        System.out.println("type = " + type);
-        System.out.println("title = " + title);
-        //System.out.println("question = " + question);
-        System.out.println("question_description: " + question_description);
-
-        JsonArray optionsArray = jsonObject.getAsJsonArray("options");
-        for (JsonElement option : optionsArray) {
-            System.out.println("option = " + option.getAsString());
-        }
-        
-        String correct_answer = jsonObject.get("correct_answer").getAsString();
         
         
-
-        return true;
     }
 
+   
 }

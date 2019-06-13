@@ -22,9 +22,12 @@ public class TrabalhoNormal {
      
         System.out.println("Inicio Teste!");
         
-        ITest demoTest = new Test();
+        String path ="/Users/joaosoares/NetBeansProjects/TrabalhoNormal/TrabalhoNormal/src/data/teste_A.json";
+        
+        
+        ITest demoTest = new Test(path);
         //demoTest.loadFromJSONFile("../data/teste_A.json");
-        demoTest.loadFromJSONFile("/Users/joaosoares/NetBeansProjects/TrabalhoNormal/TrabalhoNormal/src/data/teste_A.json");
+        demoTest.loadFromJSONFile(path);
         
         TestWindow t = new TestWindow();
         t.startTest(demoTest);
