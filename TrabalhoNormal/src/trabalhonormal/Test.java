@@ -122,20 +122,12 @@ public class Test implements ITest {
                     for (Object o : jsonArray) {
                    
                         
-                        //JSONObject questionob = (JSONObject) o;
-
-                        //JSONArray questionDetails = (JSONArray) questionob.get("type");
 
                             JSONObject questionDetails = (JSONObject) o;
 
                             String type = (String) questionDetails.get("type");
                             System.out.println("Type: " + type);
                             
-                            
-                            //JSONObject questiondet = (JSONObject) o;
-                            
-                            //JSONObject questionDetails = (JSONObject) questiondet.get("question");
-
                             
                             
                             JSONObject questionn = (JSONObject) questionDetails.get("question");
@@ -148,28 +140,22 @@ public class Test implements ITest {
                             
                             System.out.println("Question Description: " + question_description);
                             
-                           // JSONArray options = (JSONArray) questionDetails.get("options");
+                          
                             
-                           
+                            JSONArray optionsArray = (JSONArray) questionn.get("options");
                             
                             
-                            JSONArray optionsArray = (JSONArray) questionDetails.get("options");
-                            //this.options = new String[options.size()];
+                            if(optionsArray!=null){
+                               
+                            Iterator<String> iterator = optionsArray.iterator();
                             
-                           // for (int i = 0; i<options.size();i++) {
-                            //   System.out.println("options: " + this.options[i]);
-                           // }
-                    
-                           
-                           
-                          // Iterator iarray = optionsArray.iterator();
- 
-                            //while (iarray.hasNext()) {
-
-                              //  System.out.println(" "+iarray.next());
-
-                            //}
                             
+                            while (iterator.hasNext()){
+                                System.out.println("Opção: " + iterator.next());
+                            
+                            } 
+                            
+                            }
                             
                             String correct_answer = (String) questionn.get("correct_answer");
                             
@@ -178,9 +164,6 @@ public class Test implements ITest {
                             System.out.println("---------**********--------");
                             
                             
-                            
-                            
-                       
                     }
 
                      return this.question;
@@ -196,10 +179,6 @@ public class Test implements ITest {
             }
             return false;
 
-        //http://codingwithcake.com/java/how-to-parse-a-json-file-using-gson/
-        //https://java2blog.com/gson-example-read-and-write-json/
-        
-        
         
     }
 
